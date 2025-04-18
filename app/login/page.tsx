@@ -11,7 +11,6 @@ export default function LoginPage() {
   const router = useRouter();
 
   const handleLogin = async (email: string, password: string) => {
-    // Provide full path to debug; you can revert to env var once it's working
     const res = await fetch(`${API_URL}/api/users/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

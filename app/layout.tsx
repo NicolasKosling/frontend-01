@@ -28,7 +28,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <nav>
-          <h1>Student Evaluation Tool Dashboard</h1>
+          <h1 className="content-center">Student Evaluation Tool Dashboard</h1>
         </nav>
         {children}
       </body>

@@ -5,16 +5,28 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { RegisterForm } from "@/components/register-form";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL; 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export default function RegisterPage() {
   const router = useRouter();
 
-  const handleRegister = async (email: string, password: string) => {
-    const res = await fetch(`${API_URL}/users/register`, {
+  const handleRegister = async (
+    voornaam: string,
+    achternaam: string,
+    email: string,
+    telefoonnummer: string,
+    password: string
+  ) => {
+    const res = await fetch(`${API_URL}/api/users/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({
+        voornaam,
+        achternaam,
+        email,
+        telefoonnummer,
+        password,
+      }),
     });
 
     if (!res.ok) {
